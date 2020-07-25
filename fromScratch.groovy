@@ -10,7 +10,7 @@ node {
   
 
    stage("Pull Repo"){
-       git "https://github.com/farrukh90/cool_website.git"
+       git "https://github.com/DariaLarkin/FromScratch.git"
    }
   stage("Install Prerequisites"){
       // in Groovy language """ in the begining and """ in the end mean i wanna put multiple commands
