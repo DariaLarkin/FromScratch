@@ -6,16 +6,13 @@ node {
       [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], 
       
       // below line triggers this job every minute
-      pipelineTriggers([cron('* * * * *')
+      pipelineTriggers([pollSCM('* * * * *') // that is mean, read the github and if see some changes - perform the task, if not do not do nothing
     ])
   ])
 
 
-
-
-
-   stage("Stage1"){
-       echo "hello"
+   stage("Pull Repo"){
+       git "https://github.com/DariaLarkin/FromScratch.git"
    }
 stage("Stage1"){
        echo "hello"
